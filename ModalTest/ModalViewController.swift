@@ -16,9 +16,10 @@ class ModalViewController: UIViewController {
     }
     
     @IBAction func comeBackButtonPressed(_ sender: Any) {
-        navigationController?.popToRootViewController(animated: true)
-        presentingViewController?.navigationController?.popToRootViewController(animated: true)
-        presentedViewController?.navigationController?.popToRootViewController(animated: true)
+        
+        guard let nc = presentingViewController as? UINavigationController else { return }
+        nc.dismiss(animated: true, completion: nil)
+        nc.popToRootViewController(animated: true)
     }
     
     /*
