@@ -14,6 +14,16 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openModalButtonPressed" {
+            if let controller = segue.destination as? ModalViewController {
+                //controller.state = .edit
+                //controller.habit = habit
+                //controller.colView = colView
+                //controller.navController = navigationController
+            }
+        }
+    }
 
 }
 
