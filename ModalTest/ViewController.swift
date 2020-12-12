@@ -17,10 +17,17 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openModalButtonPressed" {
             if let controller = segue.destination as? ModalViewController {
-                //controller.state = .edit
-                //controller.habit = habit
-                //controller.colView = colView
-                //controller.navController = navigationController
+                guard let nav = self.navigationController else { return }
+                
+                guard let root = nav.viewControllers[0] as? RootViewController else { return }
+                
+                root.EventLabel?.text = "Открываем модально!"
+                
+                controller.submitFinalAction = {
+                    root.EventLabel?.text = "Ура, прошли полный цикл!"
+                    
+                    nav.popToRootViewController(animated: true)
+                }
             }
         }
     }

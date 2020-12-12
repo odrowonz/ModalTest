@@ -1,5 +1,5 @@
 //
-//  ModalViewController.swift
+//  RootViewController.swift
 //  ModalTest
 //
 //  Created by Andrey Antipov on 11.12.2020.
@@ -7,8 +7,9 @@
 
 import UIKit
 
-class ModalViewController: UIViewController {
-    var submitFinalAction: (()->Void)?
+class RootViewController: UIViewController {
+
+    @IBOutlet var EventLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,12 +17,7 @@ class ModalViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func comeBackButtonPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-        
-        submitFinalAction?()
-    }
-    
+
     /*
     // MARK: - Navigation
 

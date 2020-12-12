@@ -11,12 +11,24 @@
         <!--Это корень-->
         <scene sceneID="GP4-4P-M28">
             <objects>
-                <viewController id="Yiu-DE-fwX" sceneMemberID="viewController">
+                <viewController id="Yiu-DE-fwX" customClass="RootViewController" customModule="ModalTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bg4-Dl-bZv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21b-Aj-FFs">
+                                <rect key="frame" x="186" y="464.5" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="1Zl-tI-MP3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="21b-Aj-FFs" firstAttribute="centerY" secondItem="1Zl-tI-MP3" secondAttribute="centerY" id="MP9-4g-HXU"/>
+                            <constraint firstItem="21b-Aj-FFs" firstAttribute="centerX" secondItem="1Zl-tI-MP3" secondAttribute="centerX" id="bHC-tq-EXa"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Это корень" id="o2s-vn-VMD">
                         <barButtonItem key="rightBarButtonItem" id="YFf-qZ-vOn">
@@ -30,6 +42,9 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="EventLabel" destination="21b-Aj-FFs" id="7eZ-tY-Bdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kw8-Ec-cgL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -52,7 +67,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Открыть модально"/>
                                 <connections>
-                                    <segue destination="M20-C8-q0L" kind="presentation" id="VwO-Re-YVf"/>
+                                    <segue destination="M20-C8-q0L" kind="presentation" identifier="openModalButtonPressed" id="VwO-Re-YVf"/>
                                 </connections>
                             </button>
                         </barButtonItem>
