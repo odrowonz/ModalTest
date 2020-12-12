@@ -8,20 +8,20 @@
 import UIKit
 
 class ModalViewController: UIViewController {
-    var submitFinalAction: (()->Void)?
-    
+    var submitFinalAction: (() -> Void)?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+
     @IBAction func comeBackButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
-        
+
         submitFinalAction?()
     }
-    
+
     /*
     // MARK: - Navigation
 

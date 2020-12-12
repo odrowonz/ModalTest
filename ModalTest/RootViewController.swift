@@ -9,14 +9,13 @@ import UIKit
 
 class RootViewController: UIViewController {
 
-    @IBOutlet var EventLabel: UILabel?
-    
+    @IBOutlet var eventLabel: UILabel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation
